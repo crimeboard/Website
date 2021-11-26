@@ -1,0 +1,79 @@
+{
+  "name": "trump-crimes-commission",
+  "version": "0.1.0",
+  "private": true,
+  "resolutions": {
+    "bezier-js": "4.0.3"
+  },
+  "dependencies": {
+    "@auth0/auth0-react": "^1.6.0",
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.15",
+    "@iconify/icons-mdi": "^1.1.19",
+    "@iconify/react": "^1.1.4",
+    "@inovua/reactdatagrid-community": "^4.1.24",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/react": "^17.0.19",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "d3": "^5.16.0",
+    "google-map-react": "^2.1.10",
+    "history": "^5.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-bootstrap": "^1.6.1",
+    "react-bootstrap-country-select": "^0.7.12",
+    "react-bootstrap-dropdown-menu": "^1.1.23",
+    "react-dom": "^17.0.2",
+    "react-flags-select": "^2.1.2",
+    "react-fontawesome": "^1.7.1",
+    "react-force-graph": "^1.41.7",
+    "react-force-graph-2d": "^1.23.8",
+    "react-force-graph-3d": "^1.21.10",
+    "react-hook-form": "^6.15.8",
+    "react-scripts": "4.0.1",
+    "react-select": "^4.3.1",
+    "react-sortable-tree": "^2.8.0",
+    "react-tooltip": "^4.2.21",
+    "react-twitter-auth": "0.0.13",
+    "reactstrap": "^8.9.0",
+    "slim-select": "^1.27.0",
+    "three-spritetext": "^1.6.2",
+    "typescript": "^4.3.5",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "preinstall": "npx npm-force-resolutions",
+    "start": "react-scripts start",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-dom": "^17.0.9",
+    "devextreme-themebuilder": "^20.2.9"
+  }
+}

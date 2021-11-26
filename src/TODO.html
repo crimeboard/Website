@@ -1,0 +1,154 @@
+
+	<ul>
+		<li>✔️ Critical Path
+			<ul>
+				<li>Twitter Authentication - only logged in users can do database updates
+					<ul>
+						<li>Too insecure for users? Maybe I misunderstood example code but notified @TwitterSafety of issue</li>
+						<li>=> dev: use salted password to store
+							<ul>
+								<li>first week: just allow login using GUID verify code instead of password</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</li>
+	</ul>
+	
+	<ul>
+		<li>✔️ Twitter Authentication
+			<ul>
+				<li>Convenient for invited users whom have a Verification GUID e.g. invited by existing user</li>
+
+				<li>https://www.npmjs.com/package/react-twitter-auth#workflow</li>
+				<li>Also: https://medium.com/@robince885/how-to-do-twitter-authentication-with-react-and-restful-api-e525f30c62bb</li>
+				<li>New twitter handle then Add new CB_User record
+					<ul>
+						<li>How to keep this secure when UserID is returned to frontend?  Perhaps GUID token?</li>
+					</ul>
+				</li>
+			</ul>
+		</li> 
+		<li>Security  
+			<ul>					
+				<li>✔️ Add authentication to Backend API calls</li>
+				<li>✔️ SSL cert on frontend and backend API</li>
+				<li>GDPR - popup acknowledgement</li>
+				<li>Daily backup schedule of database + synch local</li>
+			</ul>
+		</li>
+		<li>Design
+			<ul>
+				<li>✔️ Replace Alert bar with popup tooltip - top-right of screen beside profile</li>
+			</ul>
+		</li>
+		<li>Make all Backend API calls Async - none-blocking</li>
+		<li>Graphics Tab - Force-directed D3 Graph of all groups and individuals
+			<ul>
+				<li>Dynamically update graph data as nodes/links added, removed and updated</li>
+				<li>✔️ Show Transaction links in Graphics</li>
+				<li>✔️ Upgrade D3@v5 to D3@v6 + use https://github.com/d3/d3-force code to make force-graph</li>
+				<li>❔ Adapt https://graus.nu/d3/ code to use React + D3@v6</li>
+				<li>Needs much more work 
+					✔️ e.g. spinner on load 
+					+ implement icons/images as appropriate
+					✔️ clickable labels on edges/connectors
+					+ useEffect + useState to refresh Graph when other tabs add/edit content
+					✔️ context menus e.g. menu entry to click on individuals Wikipedia link to new window</li>
+				<li>✔️ Redraw on browser window resize</li>
+				<li>✔️ Need to click at center of a node for popup info box.  Need to be able to click on label.</li
+				<li>Add search box on graphs to center/focus</li>
+				<li>Change PopMenu to load dynamically - like ✔️ PopMenuLink</li>
+			</ul>
+		</li>
+		<li>Maybe add Globe tab much later + Lat, Lng & DateTime fields to CB_Transaction etc</li>
+		<li>Stats tab? - TODO</li>
+		<li>Groups
+			<ul>
+				<li>See: https://reactjsexample.com/drag-and-drop-sortable-component-for-nested-data-and-hierarchies/</li>
+				<li>✔️ API returns too much data - maybe use sproc?</li>
+				<li>❔  Implement re-order save</li>
+			</ul>
+		</li>
+		<li>Relationships
+			<ul>
+				<li>✔️ Allow group or Individual source e.g. individual to individuals (like family members)</li>
+				<li>✔️ Missing data in datatable e.g. relationship</li>
+			</ul>
+		</li>
+		<li>Individuals
+			<ul>
+				<li>✔️ Show spinner on save</li>
+				<li>❔  may need enterprise edition.  UPDATE: inovua will fix two row column headers e.g. stacking-columns</li>
+				<li>✔️ Single-click to edit</li>
+				<li>❔  Remove "X" delete on textboxes?</li>
+				<li>✔️ Change "Importance" edit to dropdown select list
+					<ul>
+						<li>
+							TODO: Show red progress bar on background of each selectable item to show a 10% increase
+						</li>
+					</ul>
+				</li>
+				<li>Show "Country" edit dropdown list with flags. See: http://flag-sprites.com/ etc + bootstrap 5 vers</li>
+				<li>Validate input on user entry and save</li>
+			</ul>
+		</li>
+		<li>Transactions
+			<ul>
+				<li>✔️ Show links in Graphics</li>
+				<li>❔  How to show to/from groups/individuals? Maybe tooltip + popup edit?
+					+ dropdown select on edit
+				</li>
+			</ul>
+		</li>
+		<li>Photos/media Tab - useful websites, tools etc					
+			<ul>
+				<li>Write script to recursively cycle through folder C:\_Crimes to populate resources table?</li>
+				<li>Show in datagrid and show all unassigned images, videos, PDFs etc...</li>
+				<li>Speculative:
+					<ul>
+						<li>Write script/program to populate Resource file and Transactions from my Twitter feed</li>
+					</ul>
+				</li>
+				<li>Best to do manually, but a very slow process</li>						
+			</ul>
+		</li>
+		<li>Resources Tab - useful websites, tools etc
+			<ul>
+				<li>✔️ Links from @Bellingcat etc</li>
+			</ul>
+		</li> 
+		<li>Audit Trail of changes with easy roll-back (account holder only)
+			<ul>
+				<li>✔️ Audit table - TableName, DateTime added, Field changed, User ID (twitter handle)</li>
+				<li>Show DataGrid of changes made to my records (Creator) by other users (ModifiedBy)</li>
+			</ul>
+		</li>
+		<li>Misc
+			<ul>
+				<li>Don't show table or field names returned by any API error msgs shown in popups or anywhere - best to remove these in the API</li>
+				<li>✔️ Register Domain name</li>
+				<li>✔️ Use caching on server API for Get() requests. Entity Framework does caching.</li>
+				<li>✔️ Put projects on Github - private initially</li>						
+				<li>Add unit tests?</li>li>
+				<li>Github CI deploy</li>
+				<li>Collaborative and concurrent table edit? - SignalR</li>
+				<li>Funding
+					<ul>
+						<li>❌ Subscription to add/edit/audit records? - free to view by public</li>
+						<li>✔️ Go fund me page</li>
+					</ul>
+				</li>
+				<li>✔️ Nice font - font-family: Orbitron,sans-serif;</li>
+				<li>❌ Mobile phone friendly? - maybe too much work</li>
+				<li>Fix all Javascript errors + warnings</li>
+				<li>Replace "axios" with Fetch requests, then remove this and other unused packages</li>
+				<li>Cleanup code + make 100% TypeScript</li>
+				<li>Maybe add timeline view - much later though!</li>
+				<li>Multi-lingual? - language selector</li>
+				<li>❌ Google analytics? - https://malith-dev.medium.com/track-users-in-your-react-app-with-google-analytics-6364ebfcbae8</li>
+				<li>❔  Get job and opensource project</li>
+			</ul>
+		</li>
+	</ul>

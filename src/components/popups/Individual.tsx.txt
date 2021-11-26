@@ -1,0 +1,41 @@
+import * as React from "react";
+import { useForm } from "react-hook-form";
+
+type FormData = {
+  firstName: string,
+  surname: string,
+  commonName: string,
+  description: string,
+  countryOfBirth: string,
+  importance: string,
+  jobTitle: string,
+  wikipediaURL: string,
+  twitterHandle: string,
+  imageId: string
+};
+
+export default function App() {
+  const { register, setValue, handleSubmit, errors } = useForm<FormData>();
+  const onSubmit = handleSubmit(({ firstName, surname }) => {
+    console.log(firstName, surname);
+  }); // firstName and surname will have correct type
+
+  return (
+    <form onSubmit={onSubmit}>
+      <label>First Name</label>
+      <input name="firstName" ref={register} />
+      <label>Last Name</label>
+      <input name="surname" ref={register} />
+      <button
+        type="button"
+        onClick={() => {
+          setValue("surname", "luo"); // ✅
+          //setValue("firstName", true); // ❌: true is not string
+          //errors.bill; // ❌: property bill does not exist
+        }}
+      >
+        SetValue
+      </button>
+    </form>
+  );
+}
